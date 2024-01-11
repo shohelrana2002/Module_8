@@ -1,0 +1,62 @@
+.header,
+.nav,
+.main,
+.side-bar,
+.advatise,
+.footer {
+  padding: 5px;
+  border-radius: 5px;
+  border: 4px solid tomato;
+  background-color: aquamarine;
+}
+
+.header {
+  grid-area: header;
+}
+.nav {
+  grid-area: nav;
+}
+.main {
+  grid-area: main;
+}
+.side-bar {
+  grid-area: side-bar;
+}
+.advatise {
+  grid-area: advatise;
+}
+.footer {
+  grid-area: footer;
+}
+
+.container {
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    "header header  header header"
+    "nav     main    main   side-bar"
+    "nav     main     main   advatise"
+    "footer   footer  footer footer";
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    grid-template-areas:
+      "header"
+      "nav "
+      "main "
+      "side-bar"
+      "advatise"
+      "footer ";
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  .container {
+    grid-template-areas:
+      "header header header "
+      "nav nav nav"
+      "side-bar main main "
+      "advatise footer footer";
+  }
+}
